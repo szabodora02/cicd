@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/szabodora02/cicd/workflows/Test,%20build%20and%20release/badge.svg)](https://github.com/szabodora02/cicd/actions)
+
 # cicd
 lab2-3
 <picture>
