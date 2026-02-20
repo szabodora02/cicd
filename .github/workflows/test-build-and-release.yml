@@ -7,16 +7,17 @@ jobs:
     steps:
       - name: Install check and pkg-config
         run: |
-          sudo apt install check pkg-config
+          sudo apt update
+          sudo apt install -y check pkg-config
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Building with check
         run: |
-          gcc operations.c check_operations.c -o check_operations \
-	    `pkg-config --cflags --libs check`
+          gcc operations.c check_operations.c -o check_operations $(pkg-config --cflags --libs check)
       - name: Testing with check
         run: |
           ./check_operations
+
   building-and-delivery:
     name: Build and delivery
     permissions:
@@ -32,7 +33,7 @@ jobs:
       - name: Creating tar.gz
         run: |
           tar -czvf simplecalculator.tar.gz simplecalculator
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
