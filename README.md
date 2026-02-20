@@ -4,6 +4,9 @@
 lab2-3
 <picture>
 
+## Letöltés
+[Egyszerű számológép – legfrissebb verzió letöltése](https://github.com/szabodora02/cicd/releases/tag/latest)
+
 ## About me
 
 Hi, I'm Dora. This is my homework.
